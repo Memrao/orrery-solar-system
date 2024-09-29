@@ -1,0 +1,107 @@
+/* Set a base font size for rem units */
+
+html {
+    font-size: 16px;
+    /* 1rem = 16px; adjust as needed */
+}
+
+body,
+html {
+    margin: 0;
+    overflow: hidden;
+    /* Prevent scrolling */
+    height: 100%;
+    /* Ensure the body takes full height */
+    display: flex;
+    /* Use flexbox for centering */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    background: #0c1e2c;
+    /* Background color */
+}
+
+canvas {
+    display: block;
+    /* Ensure canvas takes full width and height */
+    max-width: 100%;
+    /* Prevent overflow */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+/* Styles for the preloader */
+
+#overlay-text {
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+    /* Default size for larger screens */
+    font-family: 'Orbitron', sans-serif;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 1s ease;
+    /* Smooth fade in */
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust for the center */
+    z-index: 1;
+    /* Ensure it's above other elements */
+}
+
+
+/* Responsive adjustments using media queries */
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+        /* 1rem = 14px; smaller screens */
+    }
+    #overlay-text {
+        font-size: 2.5rem;
+        /* Adjust text size for mobile */
+        max-width: 90%;
+        /* Limit width for mobile */
+        line-height: 1.2;
+        /* Adjust line height for better spacing */
+        text-align: center;
+        /* Center text */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    html {
+        font-size: 15px;
+        /* 1rem = 15px; tablets */
+    }
+    #overlay-text {
+        font-size: 3rem;
+        /* Adjust text size for tablets */
+        max-width: 80%;
+        /* Limit width for tablets */
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    #overlay-text {
+        font-size: 3.5rem;
+        /* Medium screen size (laptops) */
+    }
+}
+
+@media (min-width: 1201px) {
+    html {
+        font-size: 18px;
+        /* 1rem = 18px; larger screens */
+    }
+    #overlay-text {
+        font-size: 4rem;
+        /* Adjust text size for larger screens */
+    }
+}

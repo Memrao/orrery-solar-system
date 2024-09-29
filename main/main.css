@@ -1,0 +1,628 @@
+/* Global Styles */
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1b2a;
+    /* Dark background */
+    color: #d4d4d4;
+    /* Light text */
+    text-align: center;
+}
+
+h1,
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #74ccff;
+    /* Bright blue for headings */
+}
+
+.logo {
+    margin-left: 4.8rem;
+    /* Default margin for larger screens */
+}
+
+
+/* Responsive Styles for Tablet and PC */
+
+@media screen and (min-width: 768px) {
+    .logo {
+        margin-left: 4.5rem;
+        /* Maintain margin for larger screens */
+        font-size: 2rem;
+        /* Set a larger font size for better visibility */
+    }
+}
+
+
+/* Responsive Styles for Mobile */
+
+@media screen and (max-width: 767px) {
+    .logo {
+        margin-left: 2rem;
+        /* Reduced margin for mobile */
+        font-size: 1.5rem;
+        /* Smaller font size for mobile */
+    }
+}
+
+
+/* Button Styles */
+
+button {
+    background-color: #74ccff;
+    /* Bright blue for buttons */
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    /* Adds shadow behind the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    /* Increases shadow on hover */
+}
+
+
+/* Header */
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+
+/* Dissolve effect styles */
+
+
+/* Navigation Links */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #74ccff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #74ccff;
+}
+
+
+/* For active link, e.g., "Home" */
+
+.nav-links a.active {
+    color: #74ccff;
+    font-weight: bold;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* Explore Button */
+
+.explore-button {
+    background-color: #74ccff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Hamburger Menu Style */
+
+.linesDiv {
+    display: none;
+    /* Initially hidden on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.linesDiv span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+
+/* Navigation links positioned off-screen for mobile */
+
+#nav-links {
+    display: flex;
+    /* Default to flex */
+    gap: 26px;
+}
+
+
+/* For mobile and tablet screens */
+
+@media screen and (max-width: 768px) {
+    .linesDiv {
+        display: flex;
+        /* Show the hamburger menu */
+    }
+    /* Initially hide the navigation links on mobile */
+    #nav-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 200px;
+        /* Width of the sidebar */
+        position: fixed;
+        /* Fixed position for overlay */
+        top: 70px;
+        /* Adjust based on your header height */
+        right: -200px;
+        /* Start off-screen to the right */
+        background-color: #0d1b2a;
+        /* Background color for the sidebar */
+        height: calc(100vh - 70px);
+        /* Full height minus header */
+        transition: right 0.3s ease;
+        /* Transition effect for sliding */
+        z-index: 10;
+        /* Ensure it overlays other elements */
+        opacity: 0;
+        /* Initially hidden */
+        pointer-events: none;
+        /* Prevent interaction when hidden */
+    }
+    /* Adjust margin for list items */
+    #nav-links li {
+        margin: 15px 0;
+    }
+    /* When nav is active, slide in from the right */
+    nav.active #nav-links {
+        right: 0;
+        /* Slide in from the right */
+        opacity: 1;
+        /* Make it visible */
+        pointer-events: auto;
+        /* Allow interaction */
+    }
+}
+
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements on small screens */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #0d1b2a;
+    color: #d4d4d4;
+}
+
+.hero-content {
+    max-width: 90%;
+    /* Increase width for smaller screens */
+    text-align: justify;
+    /* Keep text justified */
+    margin: 0;
+    /* Remove margin */
+    padding: 0 20px;
+    /* Add some padding */
+}
+
+.s1 {
+    font-size: 1.3rem;
+    /* Maintain font size */
+}
+
+.hero-image {
+    max-width: 90%;
+    /* Make image responsive */
+    margin-top: 20px;
+    /* Add margin for spacing */
+}
+
+
+/* Responsive Styles for Tablet and PC */
+
+@media screen and (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        /* Align elements side by side on larger screens */
+        padding: 40px 0;
+        /* Increase padding for larger screens */
+    }
+    .hero-content {
+        max-width: 40%;
+        /* Set max width for larger screens */
+        margin-left: 95px;
+        /* Set left margin for larger screens */
+    }
+    .hero-image {
+        max-width: 55%;
+        /* Set max width for larger screens */
+    }
+}
+
+
+/* Responsive Styles for Mobile */
+
+@media screen and (max-width: 767px) {
+    .hero {
+        padding: 20px;
+        /* Reduce padding for mobile */
+    }
+    .hero-content {
+        max-width: 100%;
+        /* Full width for mobile */
+        margin: 0;
+        /* No margin */
+    }
+    .s1 {
+        font-size: 1rem;
+        /* Adjust font size for mobile */
+    }
+    .hero-image {
+        max-width: 100%;
+        /* Full width for mobile images */
+        margin: 10px 0;
+        /* Add vertical spacing */
+    }
+}
+
+
+/* Ensure the NEO image container maintains a fixed size */
+
+#neo-image {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+    width: 40%;
+    /* Adjust to your desired width */
+    height: 300px;
+    /* Set a fixed height based on your largest image */
+    display: block;
+    object-fit: cover;
+    position: relative;
+}
+
+
+/* Optional: If you need the container to center within the section */
+
+.neo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* NEO Section */
+
+.neo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #0d1b2a;
+}
+
+.neo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.9rem;
+    flex-direction: column;
+    /* Stack on small screens */
+}
+
+.neo-image {
+    max-width: 100%;
+    /* Make image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 0;
+    /* Remove margin */
+    object-fit: cover;
+    /* Cover the space appropriately */
+}
+
+.neo-text {
+    max-width: 90%;
+    /* Full width for mobile */
+    text-align: justify;
+    /* Keep text justified */
+    margin: 0;
+    /* Remove margin */
+}
+
+
+/* Responsive Styles for Tablet and PC */
+
+@media screen and (min-width: 768px) {
+    .neo-section {
+        flex-direction: row;
+        /* Align elements side by side on larger screens */
+        padding: 50px 0;
+        /* Restore padding for larger screens */
+    }
+    .neo-content {
+        flex-direction: row;
+        /* Align elements in a row for larger screens */
+    }
+    .neo-image {
+        max-width: 30%;
+        /* Set max width for images on larger screens */
+        margin-left: 0.5rem;
+        /* Maintain margin for spacing */
+    }
+    .neo-text {
+        max-width: 40%;
+        /* Set max width for text on larger screens */
+        margin-left: 1rem;
+        /* Maintain margin for spacing */
+    }
+}
+
+
+/* Responsive Styles for Mobile */
+
+@media screen and (max-width: 767px) {
+    .neo-section {
+        padding: 20px;
+        /* Reduce padding for mobile */
+    }
+    .neo-content {
+        flex-direction: column;
+        /* Stack elements on mobile */
+        align-items: center;
+        /* Center align for mobile */
+    }
+    .neo-image {
+        max-width: 90%;
+        /* Make sure it takes up most of the width */
+        margin: 10px 0;
+        /* Add vertical spacing */
+        object-fit: contain;
+        /* Maintain aspect ratio while fitting */
+    }
+    .neo-text {
+        max-width: 90%;
+        /* Full width for mobile text */
+        margin: 10px 0;
+        /* Add vertical spacing */
+    }
+}
+
+
+/* Science Section */
+
+.science-section {
+    background-color: #0d1b2a;
+    padding: 50px 20px;
+    /* Add horizontal padding for small screens */
+}
+
+.science-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0;
+    /* Remove padding to adapt to mobile */
+    flex-direction: column;
+    /* Stack content on smaller screens */
+}
+
+.science-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    flex: 1;
+    padding: 2.3rem 0;
+    /* Add vertical padding */
+    margin: 0;
+    /* Remove margin for smaller screens */
+    text-align: justify;
+}
+
+.science-text h2 {
+    font-size: 2.5rem;
+    /* Adjust font size for mobile */
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.science-image {
+    max-width: 80%;
+    /* Make image responsive */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0;
+    /* Remove margin for smaller screens */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.science-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Responsive Styles for Tablet and PC */
+
+@media screen and (min-width: 768px) {
+    .science-content {
+        flex-direction: row;
+        /* Align elements in a row for larger screens */
+        padding: 0 50px;
+        /* Restore padding for larger screens */
+    }
+    .science-text {
+        margin: 3rem;
+        /* Restore margin for larger screens */
+        padding: 2.3rem 0;
+        /* Adjust padding */
+    }
+    .science-text h2 {
+        font-size: 4rem;
+        /* Restore original font size for larger screens */
+    }
+    .science-image {
+        max-width: 34%;
+        /* Set max width for images on larger screens */
+        margin-right: 7rem;
+        /* Maintain margin for spacing */
+    }
+}
+
+
+/* Responsive Styles for Mobile */
+
+@media screen and (max-width: 767px) {
+    .science-section {
+        padding: 20px;
+        /* Reduce padding for mobile */
+    }
+    .science-content {
+        flex-direction: column;
+        /* Stack elements on mobile */
+        align-items: center;
+        /* Center align for mobile */
+    }
+    .science-text {
+        max-width: 90%;
+        /* Full width for mobile */
+        margin: 10px 0;
+        /* Add vertical spacing */
+    }
+    .science-image {
+        max-width: 80%;
+        /* Full width for mobile images */
+        margin: 10px 0;
+        /* Add vertical spacing */
+    }
+}
+
+footer {
+    position: relative;
+    /* Allow positioning for the pseudo-element */
+    background-color: #74ccff;
+    padding: 15px 10px;
+    /* Adjusted padding for mobile */
+    color: #ffffff;
+    text-align: center;
+    /* Center text for all devices */
+    overflow: hidden;
+    /* Hide overflow for pseudo-element */
+}
+
+
+/* Pseudo-element for gradient border */
+
+footer::before {
+    content: '';
+    position: absolute;
+    /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Stretch full width */
+    height: 4px;
+    /* Set the height of the border */
+    background: linear-gradient(to right, #000000, #74ccff);
+    /* Gradient colors */
+}
+
+.p1 {
+    font-size: 1rem;
+    /* Adjusted font size for mobile */
+    padding: 0;
+    margin: 0;
+    text-shadow: 1.2px 1.2px 1px black;
+    /* Increased offset and added blur */
+}
+
+.p2 {
+    font-size: 0.75rem;
+    /* Smaller font size for mobile */
+    padding: 0;
+    margin: 0;
+    text-shadow: 1.2px 1.2px 1px black;
+    /* Increased offset and added blur */
+}
+
+
+/* Media query for tablets and larger screens */
+
+@media screen and (min-width: 768px) {
+    footer {
+        padding: 20px 50px;
+        /* Increased padding for larger screens */
+    }
+    .p1 {
+        font-size: 1.1rem;
+        /* Keep the same for larger screens */
+    }
+    .p2 {
+        font-size: 0.8rem;
+        /* Keep the same for larger screens */
+    }
+}

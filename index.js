@@ -30,7 +30,7 @@ function init() {
     scene.add(directionalLight);
 
     // Create Earth texture from uploaded image
-    const earthTexture = new THREE.TextureLoader().load("../Source/earth.jpg"); // Ensure this is a full Earth image
+    const earthTexture = new THREE.TextureLoader().load("./Source/earth.jpg"); // Ensure this is a full Earth image
     const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32); // Sphere size remains 0.5
     const earthMaterial = new THREE.MeshPhongMaterial({
         map: earthTexture,

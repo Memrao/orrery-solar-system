@@ -105,3 +105,43 @@ canvas {
         /* Adjust text size for larger screens */
     }
 }
+
+
+/* CSS to make the canvas responsive */
+
+#three-canvas {
+    width: 100%;
+    /* Make the canvas full width */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+
+/* Media query for mobile devices */
+
+@media (max-width: 600px) {
+    #three-canvas {
+        height: 100vh;
+        /* Full height for mobile */
+    }
+}
+
+
+/* Style for the overlay text */
+
+#overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    /* Start hidden */
+    transition: opacity 0.5s;
+    /* Fade transition */
+    color: white;
+    /* Text color */
+    font-size: 2em;
+    /* Adjust text size */
+    text-align: center;
+    /* Center text */
+}

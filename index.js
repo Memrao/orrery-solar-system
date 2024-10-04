@@ -30,7 +30,7 @@ function init() {
     scene.add(directionalLight);
 
     // Create Earth texture from uploaded image
-    const earthTexture = new THREE.TextureLoader().load("./Source/loadingpage-earth img.png"); // Ensure this is a full Earth image
+    const earthTexture = new THREE.TextureLoader().load("./Source/earth.jpg"); // Ensure this is a full Earth image
     const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32); // Sphere size remains 0.5
     const earthMaterial = new THREE.MeshPhongMaterial({
         map: earthTexture,
@@ -75,7 +75,7 @@ function showText() {
     const textElement = document.getElementById('overlay-text');
     textElement.style.opacity = 1; // Set text to fully visible
 
-    // // Set a timeout to redirect after 2.5 seconds (0.5 seconds delay plus text display)
+    // Set a timeout to redirect after 2.5 seconds (0.5 seconds delay plus text display)
     setTimeout(() => {
         window.location.href = "./main/main.html"; // Redirect to the main page after 2 seconds
     }, 3000); // 2500 milliseconds

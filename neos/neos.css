@@ -30,7 +30,6 @@ h2 {
 
 .hero {
     background: url('../Source/NEOs.jpg') no-repeat center center;
-    /* Ensure the image is centered */
     background-size: cover;
     /* Cover the entire hero section */
     background-attachment: fixed;
@@ -80,6 +79,16 @@ h2 {
 
 /* Content inside the hero section */
 
+.fixed-content {
+    position: relative;
+    /* Keep the content in the normal flow */
+    z-index: 2;
+    /* Ensure content is above the overlay */
+}
+
+
+/* Ensure text is above the overlay */
+
 .hero h1,
 .hero p {
     position: relative;
@@ -125,6 +134,14 @@ h2 {
         padding: 10px 5px;
         /* Further adjust padding */
     }
+}
+
+
+/* Add margin to the content below the hero section */
+
+.page-content {
+    margin-top: 20px;
+    /* Space between hero and content below */
 }
 
 

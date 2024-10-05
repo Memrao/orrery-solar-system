@@ -32,13 +32,11 @@ canvas {
 }
 
 
-/* Styles for the preloader */
+/* Styles for the overlay text */
 
 #overlay-text {
     cursor: pointer;
     color: white;
-    font-size: 3rem;
-    /* Default size for larger screens */
     font-family: 'Orbitron', sans-serif;
     opacity: 0;
     /* Initially hidden */
@@ -53,6 +51,8 @@ canvas {
     /* Adjust for the center */
     z-index: 1;
     /* Ensure it's above other elements */
+    text-align: center;
+    /* Center text */
 }
 
 
@@ -66,12 +66,10 @@ canvas {
     #overlay-text {
         font-size: 2.5rem;
         /* Adjust text size for mobile */
-        max-width: 90%;
+        max-width: 60%;
         /* Limit width for mobile */
         line-height: 1.2;
         /* Adjust line height for better spacing */
-        text-align: center;
-        /* Center text */
     }
 }
 
@@ -90,7 +88,7 @@ canvas {
 
 @media (min-width: 901px) and (max-width: 1200px) {
     #overlay-text {
-        font-size: 3.5rem;
+        font-size: 5rem;
         /* Medium screen size (laptops) */
     }
 }
@@ -101,47 +99,7 @@ canvas {
         /* 1rem = 18px; larger screens */
     }
     #overlay-text {
-        font-size: 4rem;
+        font-size: 8rem;
         /* Adjust text size for larger screens */
     }
-}
-
-
-/* CSS to make the canvas responsive */
-
-#three-canvas {
-    width: 100%;
-    /* Make the canvas full width */
-    height: auto;
-    /* Maintain aspect ratio */
-}
-
-
-/* Media query for mobile devices */
-
-@media (max-width: 600px) {
-    #three-canvas {
-        height: 100vh;
-        /* Full height for mobile */
-    }
-}
-
-
-/* Style for the overlay text */
-
-#overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    /* Start hidden */
-    transition: opacity 0.5s;
-    /* Fade transition */
-    color: white;
-    /* Text color */
-    font-size: 2em;
-    /* Adjust text size */
-    text-align: center;
-    /* Center text */
 }

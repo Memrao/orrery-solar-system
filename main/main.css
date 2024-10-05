@@ -431,7 +431,7 @@ header h1 {
         /* Center align for mobile */
     }
     .neo-image {
-        max-width: 90%;
+        max-width: 100%;
         /* Make sure it takes up most of the width */
         margin: 10px 0;
         /* Add vertical spacing */

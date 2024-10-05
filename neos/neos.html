@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Near-Earth Objects (NEOs)</title>
     <link rel="stylesheet" href="neos.css">
-    <style>
 
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Orbitron&display=swap" rel="stylesheet">
+
+
+
 </head>
 
 <body>
@@ -55,21 +57,32 @@
                 NEOs are significant not only for scientific discovery but also for planetary defense, offering valuable insights into the early solar system and helping to develop measures to prevent potential catastrophes caused by asteroid impacts.
             </p> -->
 
-            <button class="back-button" onclick="goBack()">Go Back</button>
+            <div class="button-container" style="display: flex; justify-content: center;">
+                <button class="back-button" onclick="goBack()">Go Back</button>
+            </div>
+
         </div>
     </div>
-
-    <footer>
+    <div class="img1">
+        <img src="../Source/img1.png" alt="">
+    </div>
+    <footer class="or">
         <p class="foot">Source: National Research Council. 1998.<br> Exploration of Near-Earth Objects. Washington, DC: The National Academies Press.<br>
             <a href="https://nap.nationalacademies.org/read/6106/chapter/3#6" target="_blank">https://nap.nationalacademies.org/read/6106/chapter/3#6</a>
         </p>
     </footer>
 
+    <script></script>
     <script>
         function goBack() {
-            window.history.back();
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '../main/main.html'; // Replace with your desired fallback URL
+            }
         }
     </script>
+
 </body>
 
 </html>

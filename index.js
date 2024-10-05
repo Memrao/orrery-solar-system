@@ -19,6 +19,7 @@ function init() {
         alpha: true // Keep alpha for transparency
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio); // Ensures consistency across different screens
 
     // Add a subtle ambient light
     const ambientLight = new THREE.AmbientLight(0x404040, 0.5); // Soft white light with lower intensity
@@ -31,7 +32,7 @@ function init() {
 
     // Create Earth texture from uploaded image
     const earthTexture = new THREE.TextureLoader().load("./Source/earth.jpg"); // Ensure this is a full Earth image
-    const earthGeometry = new THREE.SphereGeometry(0.5, 32, 32); // Sphere size remains 0.5
+    const earthGeometry = new THREE.SphereGeometry(0.6, 64, 64); // Increased size from 0.5 to 1
     const earthMaterial = new THREE.MeshPhongMaterial({
         map: earthTexture,
         shininess: 20 // Reduced shininess for a less reflective surface
@@ -51,13 +52,16 @@ function animate() {
     requestAnimationFrame(animate);
 
     // Move Earth towards the center smoothly
-    const speed = 0.05; // Speed of the movement
+    const speed = 0.03; // Reduced speed for smoother movement
     if (Math.abs(earthMesh.position.x - targetPosition.x) > 0.01) {
         earthMesh.position.x += (targetPosition.x - earthMesh.position.x) * speed;
     }
     if (Math.abs(earthMesh.position.y - targetPosition.y) > 0.01) {
         earthMesh.position.y += (targetPosition.y - earthMesh.position.y) * speed;
     }
+
+    // Stop the Earth's rotation by not updating rotation
+    // earthMesh.rotation.y += 0; // This line is not needed, as it's already not rotating
 
     // Render the scene
     renderer.render(scene, camera);
@@ -74,12 +78,20 @@ function animate() {
 function showText() {
     const textElement = document.getElementById('overlay-text');
     textElement.style.opacity = 1; // Set text to fully visible
+    textElement.style.fontSize = '4em';
 
     // Set a timeout to redirect after 2.5 seconds (0.5 seconds delay plus text display)
     setTimeout(() => {
-        window.location.href = "./main/main.html"; // Redirect to the main page after 2 seconds
-    }, 3000); // 2500 milliseconds
+        window.location.href = "./main/main.html"; // Redirect to the main page after 3 seconds
+    }, 3000); // 3000 milliseconds
 }
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
 
 // When the page loads, initialize Three.js
 window.onload = () => {

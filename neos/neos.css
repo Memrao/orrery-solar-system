@@ -8,14 +8,16 @@ body {
     background-color: #0d1b2a;
     color: #d4d4d4;
     font-family: 'Lato', sans-serif;
+    /* Use Lato for body text */
     text-align: center;
 }
 
-.h1,
-.h2 {
+h1,
+h2 {
+    /* Apply Orbitron to all headings */
     font-family: 'Orbitron', sans-serif;
-    font-family: 'Lato', sans-serif;
     color: #ffffff;
+    /* Heading color */
 }
 
 * {
@@ -24,53 +26,33 @@ body {
 }
 
 
-/* Hero Section with Background Image */
+/* Hero Section with Fixed Background Image */
 
 .hero {
-    background: url('../Source/NEOs.jpg') no-repeat center fixed;
+    background: url('../Source/NEOs.jpg') no-repeat center center;
+    /* Ensure the image is centered */
     background-size: cover;
+    /* Cover the entire hero section */
+    background-attachment: fixed;
+    /* Keep the background image fixed */
     min-height: 60vh;
+    /* Minimum height of the hero section */
     padding: 80px 20px;
+    /* Padding around the content */
     display: flex;
+    /* Use flexbox for layout */
     flex-direction: column;
+    /* Stack child elements vertically */
     justify-content: center;
+    /* Center child elements vertically */
     align-items: center;
+    /* Center child elements horizontally */
     text-align: center;
+    /* Center text */
     position: relative;
     /* Allow positioning of child elements */
-}
-
-.small-image {
-    max-width: 50%;
-    /* Limit the size of the small image */
-    height: auto;
-    /* Maintain aspect ratio */
-    margin: 20px 0;
-    /* Add vertical spacing */
-    filter: brightness(1.2);
-    /* Lighten the image */
-}
-
-.large-image {
-    max-width: 80%;
-    /* Limit the size of the large image */
-    height: auto;
-    /* Maintain aspect ratio */
-    margin: 20px 0;
-    /* Add vertical spacing */
-    filter: brightness(0.8);
-    /* Darken the image slightly */
-}
-
-
-/* Optional: Add hover effect for images */
-
-.small-image:hover,
-.large-image:hover {
-    transform: scale(1.05);
-    /* Slightly enlarge on hover */
-    transition: transform 0.3s;
-    /* Smooth transition */
+    overflow: hidden;
+    /* Prevent overflow of child elements */
 }
 
 
@@ -80,15 +62,69 @@ body {
     content: '';
     /* Required for the pseudo-element */
     position: absolute;
-    /* Position overlay */
+    /* Position overlay absolutely */
     top: 0;
+    /* Align to the top */
     left: 0;
+    /* Align to the left */
     right: 0;
+    /* Align to the right */
     bottom: 0;
+    /* Align to the bottom */
     background-color: rgba(0, 0, 0, 0.1);
-    /* Dark overlay with 50% opacity */
+    /* Dark overlay with 10% opacity */
     z-index: 1;
     /* Place overlay above the background */
+}
+
+
+/* Content inside the hero section */
+
+.hero h1,
+.hero p {
+    position: relative;
+    /* Ensure content is above the overlay */
+    z-index: 2;
+    /* Ensure text is above the overlay */
+}
+
+
+/* Optional: Responsive adjustments */
+
+@media (max-width: 1200px) {
+    .hero {
+        min-height: 50vh;
+        /* Adjust height for medium devices */
+        padding: 60px 20px;
+        /* Adjust padding */
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        min-height: 40vh;
+        /* Adjust height for tablets */
+        padding: 40px 15px;
+        /* Adjust padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 30vh;
+        /* Adjust height for mobile devices */
+        padding: 20px 10px;
+        /* Adjust padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 25vh;
+        /* Further adjust for very small devices */
+        padding: 10px 5px;
+        /* Further adjust padding */
+    }
 }
 
 
@@ -114,8 +150,9 @@ body {
 .physical-properties-section h2,
 .hazard-mitigation-section h2 {
     font-family: 'Orbitron', sans-serif;
+    /* Orbitron for section headings */
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     color: #ffffff;
 }
 
@@ -123,7 +160,9 @@ body {
 .classification-section p,
 .physical-properties-section p,
 .hazard-mitigation-section p {
-    font-size: 0.5rem;
+    font-family: 'Lato', sans-serif;
+    /* Lato for paragraph text */
+    font-size: 0.4rem;
     max-width: 600px;
     /* Reduced max width for better paragraph control */
     margin: 0 auto;
@@ -152,14 +191,12 @@ body {
     justify-content: center;
 }
 
-.content-wrapper h2 {
-    font-style: center;
-    text-align: center;
-}
-
+.content-wrapper h2,
 .content-wrapper h1 {
-    font-style: center;
+    font-family: 'Orbitron', sans-serif;
+    /* Orbitron for wrapper headings */
     text-align: center;
+    /* Center text for headings */
 }
 
 .back-button {
@@ -168,7 +205,8 @@ body {
     align-items: center;
     /* Optional: center vertically if needed */
     margin: 30px 0;
-    font-family: 'Orbitron';
+    font-family: 'Orbitron', sans-serif;
+    /* Orbitron for button text */
     padding: 10px 20px;
     font-size: 1.2rem;
     color: #ffffff;
@@ -180,44 +218,68 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.back-button button {
-    display: inline-block;
-    /* The button itself remains as inline-block for proper sizing */
-}
-
-.back-button button:hover {
+.back-button:hover {
     background-color: #2a91d1;
     transform: scale(1.05);
 }
 
-.back-button button:active {
+.back-button:active {
     transform: scale(0.95);
 }
 
-.back-button button:focus {
+.back-button:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(56, 182, 255, 0.5);
+}
+
+.img1 {
+    width: 100%;
+    /* Full width */
+    height: 390px;
+    /* Fixed height for cropping */
+    overflow: hidden;
+    /* Hide the overflow (cropped part of the image) */
+}
+
+.img1 img {
+    width: 100%;
+    /* Fit the container's width */
+    height: 100%;
+    /* Stretch to match the container's height */
+    object-fit: cover;
+    /* Maintain aspect ratio while cropping */
+    object-position: 0 90%;
+    /* Shift the image slightly up to crop from the bottom */
 }
 
 
 /* Footer Styles */
 
+
+/* Footer Styles */
+
 footer {
-    background-color: #74ccff;
     padding: 30px;
     color: #ffffff;
-    border-top: 2px solid #74ccff;
+    border: 2px solid #74ccff;
+    /* Border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    /* Box shadow */
     width: 100%;
     text-align: center;
+    border-radius: 8px;
+    /* Rounded corners */
 }
 
 .foot {
     font-family: 'Orbitron', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 footer p,
 footer a {
     font-size: 0.9rem;
+    /* Base font size */
     margin: 0;
     color: #fdfdfd;
 }
@@ -229,6 +291,57 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+
+/* Media Queries for Responsive Footer */
+
+@media (max-width: 1200px) {
+    footer {
+        padding: 25px;
+        /* Reduce padding for medium devices */
+    }
+    footer p,
+    footer a {
+        font-size: 0.85rem;
+        /* Slightly smaller font size */
+    }
+}
+
+@media (max-width: 992px) {
+    footer {
+        padding: 20px;
+        /* Further reduce padding */
+    }
+    footer p,
+    footer a {
+        font-size: 0.8rem;
+        /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+        /* Reduce padding for mobile devices */
+    }
+    footer p,
+    footer a {
+        font-size: 0.75rem;
+        /* Even smaller font size */
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding: 10px;
+        /* Minimal padding for very small devices */
+    }
+    footer p,
+    footer a {
+        font-size: 0.7rem;
+        /* Smallest font size for mobile */
+    }
 }
 
 

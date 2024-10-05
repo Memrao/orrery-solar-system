@@ -65,7 +65,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0d1b2a;
     /* Darker blue on hover */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     /* Increases shadow on hover */
@@ -169,7 +169,7 @@ header h1 {
 }
 
 .explore-button:hover {
-    background-color: #0056b3;
+    background-color: #0d1b2a;
 }
 
 

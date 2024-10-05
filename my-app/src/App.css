@@ -1,0 +1,186 @@
+/* Set a base font size for rem units */
+
+html {
+    font-size: 16px;
+    /* 1rem = 16px; adjust as needed */
+}
+
+body,
+html {
+    margin: 0;
+    overflow: hidden;
+    /* Prevent scrolling */
+    height: 100%;
+    /* Ensure the body takes full height */
+    display: flex;
+    /* Use flexbox for centering */
+    flex-direction: column;
+    /* Stack header above the content */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    background: #0c1e2c;
+    /* Background color */
+}
+
+.orrery-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack header above the image */
+    height: 100%;
+    /* Full height of the viewport */
+}
+
+.orrery-header {
+    display: flex;
+    /* Align items in a row */
+    justify-content: space-between;
+    /* Space out header elements */
+    align-items: center;
+    /* Vertically center the items */
+    padding: 20px;
+    width: 100%;
+    /* Full width of the header */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Optional: semi-transparent background */
+    color: white;
+    /* Text color */
+}
+
+h1 {
+    margin: 0;
+    /* Remove default margin */
+    font-family: 'Orbitron', sans-serif;
+    /* Apply font */
+    font-size: 2rem;
+    /* Default font size */
+}
+
+.go-back {
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    /* Push the button to the right */
+}
+
+.go-back:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+}
+
+.image-container {
+    flex: 1;
+    /* Take the remaining space */
+    display: flex;
+    /* Center the image */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+img {
+    max-width: 100%;
+    /* Ensure the image scales */
+    max-height: 100%;
+    /* Ensure the image doesn't overflow */
+    object-fit: cover;
+    /* Cover the container */
+    display: block;
+    /* Remove bottom space */
+}
+
+
+/* Styles for the overlay text */
+
+#overlay-text {
+    cursor: pointer;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 1s ease;
+    /* Smooth fade in */
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust for the center */
+    z-index: 1;
+    /* Ensure it's above other elements */
+    text-align: center;
+    /* Center text */
+}
+
+
+/* Responsive adjustments using media queries */
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+        /* 1rem = 14px; smaller screens */
+    }
+    h1 {
+        font-size: 1.5rem;
+        /* Adjust heading size for mobile */
+    }
+    #overlay-text {
+        font-size: 2.5rem;
+        /* Adjust text size for mobile */
+        max-width: 60%;
+        /* Limit width for mobile */
+        line-height: 1.2;
+        /* Adjust line height for better spacing */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    html {
+        font-size: 15px;
+        /* 1rem = 15px; tablets */
+    }
+    h1 {
+        font-size: 2rem;
+        /* Adjust heading size for tablets */
+    }
+    #overlay-text {
+        font-size: 3rem;
+        /* Adjust text size for tablets */
+        max-width: 80%;
+        /* Limit width for tablets */
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+        /* Medium screen size (laptops) */
+    }
+    #overlay-text {
+        font-size: 5rem;
+        /* Medium screen size (laptops) */
+    }
+}
+
+@media (min-width: 1201px) {
+    html {
+        font-size: 18px;
+        /* 1rem = 18px; larger screens */
+    }
+    h1 {
+        font-size: 4rem;
+        /* Adjust heading size for larger screens */
+    }
+    #overlay-text {
+        font-size: 8rem;
+        /* Adjust text size for larger screens */
+    }
+}

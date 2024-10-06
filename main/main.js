@@ -69,6 +69,24 @@ function autoSwitchNEOImages() {
     // Automatically change the image every 4 seconds
     setInterval(fadeToNextImage, 2000);
 }
-
 // Call the function to start the image rotation with dissolve effect
 autoSwitchNEOImages();
+// Select the flip card and GIF elements
+const flipCard = document.querySelector('.flip-card');
+const gifImage = flipCard.querySelector('.flip-card-front img'); // Assuming the GIF is in the front side
+
+// Play the GIF when the card is hovered
+flipCard.addEventListener('mouseenter', () => {
+    // Check if the GIF is loaded, and reset it to ensure it plays from the start
+    if (gifImage) {
+        // Set the src attribute to trigger the GIF restart
+        const src = gifImage.src;
+        gifImage.src = ''; // Clear the src to stop it
+        gifImage.src = src; // Reset to the original src to play the GIF again
+    }
+});
+
+// You can also add an optional mouseleave event if needed
+flipCard.addEventListener('mouseleave', () => {
+    // Optional: If you want to keep the GIF playing, you can leave this empty
+});

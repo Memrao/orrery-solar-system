@@ -1,0 +1,193 @@
+/* Set a base font size for rem units */
+
+html {
+    /* font-size: 1rem; */
+    /* 1rem = 16px; adjust as needed */
+}
+
+body,
+html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #0c1e2c;
+}
+
+.orrery-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.orrery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* Increased padding for more gap */
+    width: 100%;
+    color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(12, 30, 44, 0.8);
+    /* Semi-transparent background */
+}
+
+h1 {
+    margin: 0;
+    /* Remove default margin */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    /* Default font size */
+}
+
+.image-container {
+    flex: 1;
+    /* Take the remaining space */
+    display: flex;
+    /* Center the image */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    margin-top: 20px;
+    /* Space for the fixed header */
+    padding: 10px;
+    /* Add padding to ensure space around images */
+}
+
+.go-back {
+    background-color: #74ccff;
+    /* Button color */
+    color: white;
+    /* Text color */
+    border: 1px solid black;
+    /* Border for button */
+    padding: 10px 30px;
+    /* Padding for button */
+    border-radius: 9px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    display: inline-block;
+    /* Ensure button takes up space */
+    z-index: 10;
+    /* Bring button above other content */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+    font-size: 0.8rem;
+    /* Font size */
+    font-family: 'Orbitron', sans-serif;
+    /* Font family */
+    max-width: 100%;
+    /* Ensures button doesn't overflow its container */
+    box-sizing: border-box;
+    /* Include padding and border in element's total width */
+    margin: 10px;
+    /* Add some margin around the button */
+    align-self: center;
+    /* Center the button horizontally */
+}
+
+
+/* Fix the border-radius issue by applying it correctly */
+
+.go-back:hover {
+    background-color: #0d1b2a;
+    /* Darker shade on hover */
+}
+
+img {
+    width: 100%;
+    /* Ensure the image scales to fit its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-width: 100%;
+    /* Prevent overflow */
+    object-fit: cover;
+    /* Cover the container */
+    display: block;
+    /* Remove bottom space */
+}
+
+
+/* Responsive adjustments using media queries */
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+        /* 1rem = 14px; smaller screens */
+    }
+    h1 {
+        font-size: 1.5rem;
+        /* Adjusted font size for mobile */
+    }
+    .go-back {
+        padding: 8px 20px;
+        /* Reduce padding for smaller button */
+        font-size: 0.7rem;
+        /* Smaller font size for mobile */
+        width: auto;
+        /* Allow the button to auto-adjust width */
+        margin: 10px;
+        /* Maintain margin for spacing */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    html {
+        font-size: 15px;
+        /* 1rem = 15px; tablets */
+    }
+    h1 {
+        font-size: 2rem;
+        /* Adjusted heading size for tablets */
+    }
+    .go-back {
+        padding: 10px 25px;
+        /* Adjusted padding for tablet */
+        font-size: 0.9rem;
+        /* Slightly larger font size for tablet */
+        margin: 15px;
+        /* Adjust margin for spacing */
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    h1 {
+        font-size: 2.5rem;
+        /* Adjusted font size for medium screens */
+    }
+    .go-back {
+        padding: 12px 35px;
+        /* Padding for medium screens */
+        font-size: 1rem;
+        /* Standard font size for medium screens */
+        margin: 20px;
+        /* Adjust margin for medium screens */
+    }
+}
+
+@media (min-width: 1201px) {
+    html {
+        font-size: 15px;
+        /* 1rem = 18px; larger screens */
+    }
+    h1 {
+        font-size: 2.8rem;
+        /* Adjusted font size for larger screens */
+    }
+    .go-back {
+        padding: 10px 30px;
+        /* Larger padding for larger screens */
+        font-size: 1.1rem;
+        /* Standard font size for larger screens */
+        margin: 25px;
+        /* Adjust margin for larger screens */
+    }
+}

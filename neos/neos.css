@@ -250,23 +250,53 @@ h2 {
 }
 
 .img1 {
-    width: 100%;
-    /* Full width */
-    height: 390px;
-    /* Fixed height for cropping */
+    width: 100vw;
+    /* Full viewport width */
+    height: 500px;
+    /* Default height for larger screens like PCs */
     overflow: hidden;
-    /* Hide the overflow (cropped part of the image) */
+    /* Hide the overflow to crop the image */
+    margin: 0 auto;
+    /* Center the container */
 }
 
 .img1 img {
     width: 100%;
-    /* Fit the container's width */
     height: 100%;
-    /* Stretch to match the container's height */
     object-fit: cover;
     /* Maintain aspect ratio while cropping */
-    object-position: 0 90%;
-    /* Shift the image slightly up to crop from the bottom */
+    object-position: center top;
+    /* Show upper part and crop bottom */
+}
+
+
+/* Media Query for Tablets */
+
+@media (max-width: 1024px) {
+    .img1 {
+        height: 400px;
+        /* Adjust height for tablet screens */
+    }
+}
+
+
+/* Media Query for Mobile Devices */
+
+@media (max-width: 768px) {
+    .img1 {
+        height: 300px;
+        /* Adjust height for mobile devices */
+    }
+}
+
+
+/* Media Query for Small Mobile Devices (e.g., phones with smaller screens) */
+
+@media (max-width: 480px) {
+    .img1 {
+        height: 250px;
+        /* Smaller height for small mobile devices */
+    }
 }
 
 

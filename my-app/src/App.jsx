@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import Orrery from './components/orrery/orrery'; // Correct import path
+// import Orrery from './components/orrery/orrery'; // Correct import path
 
 const App = () => {
   return (
@@ -11,4 +11,4 @@ const App = () => {
   );
 };
 
-export default App;
+// export default App;

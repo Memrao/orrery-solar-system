@@ -23,7 +23,6 @@ links.forEach(link => {
     link.addEventListener('click', closeNav);
 });
 
-
 // Function to automatically switch between NEO images with dissolve effect
 function autoSwitchNEOImages() {
     const neoImage = document.getElementById("neo-image");
@@ -44,7 +43,8 @@ function autoSwitchNEOImages() {
 
         // After the fade-out transition ends, change the image and fade in
         setTimeout(() => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
+            currentImageIndex = (currentImageIndex + 1) % images.length; // Update the index
+
             neoImage.src = images[currentImageIndex];
 
             // Flip and rotate the first and third comet images horizontally to face the text
@@ -66,11 +66,13 @@ function autoSwitchNEOImages() {
         neoImage.style.transform = 'rotate(15deg)'; // Rotate for other images
     }
 
-    // Automatically change the image every 4 seconds
-    setInterval(fadeToNextImage, 2000);
+    // Automatically change the image every 4 seconds (3 seconds visible, 1 second fade out)
+    setInterval(fadeToNextImage, 4000); // Set the interval for image switching
 }
+
 // Call the function to start the image rotation with dissolve effect
 autoSwitchNEOImages();
+
 // Select the flip card and GIF elements
 const flipCard = document.querySelector('.flip-card');
 const gifImage = flipCard.querySelector('.flip-card-front img'); // Assuming the GIF is in the front side

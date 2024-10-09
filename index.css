@@ -24,11 +24,14 @@ html {
 
 canvas {
     display: block;
-    /* Ensure canvas takes full width and height */
+    /* Ensure canvas takes full width */
     max-width: 100%;
     /* Prevent overflow */
     height: auto;
     /* Maintain aspect ratio */
+    /* Optional: Add a minimum height for better visibility */
+    min-height: 300px;
+    /* Adjust as necessary */
 }
 
 
@@ -71,6 +74,10 @@ canvas {
         line-height: 1.2;
         /* Adjust line height for better spacing */
     }
+    canvas {
+        min-height: 200px;
+        /* Minimum height for mobile */
+    }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
@@ -84,12 +91,20 @@ canvas {
         max-width: 80%;
         /* Limit width for tablets */
     }
+    canvas {
+        min-height: 250px;
+        /* Minimum height for tablets */
+    }
 }
 
 @media (min-width: 901px) and (max-width: 1200px) {
     #overlay-text {
         font-size: 5rem;
         /* Medium screen size (laptops) */
+    }
+    canvas {
+        min-height: 300px;
+        /* Minimum height for laptops */
     }
 }
 
@@ -101,5 +116,9 @@ canvas {
     #overlay-text {
         font-size: 8rem;
         /* Adjust text size for larger screens */
+    }
+    canvas {
+        min-height: 400px;
+        /* Minimum height for larger screens */
     }
 }
